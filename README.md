@@ -13,4 +13,6 @@ for our tools to be used. AWS has the necessary networking / security components
 
 - So our web application is up and running using our webserver (EC2- tomcat) but we want to have our application to be easily deployable and scalable. This is where Docker containers come in. We can now take our application with its necessary components needed to run and put it into a container that runs isolated from the host. This gives a significant performance boost and reduces the size of the application as opposed to running the application on the traditional VM. 
 
-- Now comes time for when our application gets introduced new functionality and needs to be upgraded. This is where our previous tools used are at their limitation, for this purpose this is where ansible comes in. We use Ansible to satisfy our fresh installation and upgrade needs for our application by using the ansible playbooks. 
+- Now comes time for when our application gets introduced new functionality and needs to be upgraded. This is where our previous tools used are at their limitation, for this purpose this is where ansible comes in. We use Ansible to satisfy our fresh installation and upgrade needs for our application by using the ansible playbooks.
+
+- But what happens if our container unexpectedly goes down? so far we don't really have the element of high availability in our application so now we leverage Kubernetes. With a Kubernetes cluster we can now ensure that if in the case of our containers going down they now will automatically redeploy and the high availability is now achieved. 
